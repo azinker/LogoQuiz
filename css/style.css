@@ -2,10 +2,13 @@
 html,
 body {
     height: 100%;
-}
-
-body {
-    background: white;
+    background: url('../images/background.jpg') no-repeat center center fixed;
+    -webkit-background-size: cover;
+    -moz-background-size: cover;
+    -o-background-size: cover;
+    background-size: cover;
+    margin-left: auto;
+    margin-right: auto;
 }
 
 img {
@@ -22,6 +25,13 @@ img {
     margin: 0 auto;
     text-align: center;
     padding: 10px;
+    background-color: #323232;
+    height: 600px;
+    width: 400px;
+    box-shadow: 1px 0px 22px 0px #000000;
+    border-radius: 18px 18px 18px 18px;
+    -moz-border-radius: 18px 18px 18px 18px;
+    -webkit-border-radius: 18px 18px 18px 18px;
 }
 
 h1 {
@@ -38,38 +48,40 @@ p {
 }
 
 #answer {
-    outline: none;
-    padding: 10px;
-    font-size: 30px;
-    margin-bottom: 20px;
-    margin-right: 5px;
-    border: 1px solid #aaa;
-    color: gray;
+    border-color: #cccccc;
+    font-size: 24px;
+    padding: 6px;
+    border-width: 2px;
+    border-radius: 0px;
+    border-style: solid;
+    color: #b0b0b0;
+    box-shadow: 1px 0px 22px 0px #53BDFF;
+    text-shadow: 0px 0px 0px rgba(42, 42, 42, .84);
     font-family: "Londrina Solid", cursive;
-    font-size: 14px;
+    transition: 0.4s;
+}
+
+#answer:focus {
+    outline: none;
+}
+
+#answer:hover {
+    box-shadow: 1px 0px 22px 0px #34cd39;
 }
 
 #clickme {
+    margin: 10px 15px;
     border: none;
     font-size: 30px;
     padding: 10px 20px;
     cursor: pointer;
     background: #53BDFF;
     color: white;
-    transition: .3s;
-    margin: 10px 0;
-    text-shadow: 1px 2px 0 #20a9ff;
-    margin: 10px 0;
-    border: none;
-    font-size: 30px;
-    padding: 10px 20px;
-    background: #34cd39;
-    color: white;
-    transition: .3s;
+    transition: .4s;
     text-shadow: 1px 2px 0 #2EB933;
     font-family: "Londrina Solid", cursive;
 }
 
 #clickme:hover {
-    background: #20a9ff;
+    background: #34cd39;
 }
