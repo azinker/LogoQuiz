@@ -11,7 +11,8 @@ body {
     background-size: cover;
     margin-left: auto;
     margin-right: auto;
-    overflow-y: hidden;
+    /*    overflow-y: hidden;*/
+    
     font-family: "Londrina Solid", cursive;
 }
 
@@ -23,6 +24,40 @@ img {
     margin-right: auto;
     margin-left: auto;
 }
+/*STUFF ADDED BY JAVASCRIPT*/
+
+.gameStart {
+    font-size: 40px;
+    padding-top: 0px;
+    position: relative;
+    bottom: 300px;
+    color: #53BDFF;
+    font-weight: 300;
+}
+
+.startMe {
+    border: none;
+    font-size: 30px;
+    padding: 10px 20px;
+    cursor: pointer;
+    background: #53BDFF;
+    color: white;
+    transition: .4s;
+    text-shadow: 1px 2px 0 #2EB933;
+    font-family: "Londrina Solid", cursive;
+    position: relative;
+    bottom: 200px;
+}
+
+.correct {
+    font-size: 40px;
+    padding-top: 0px;
+    position: relative;
+    bottom: 300px;
+    color: green;
+    font-weight: 300;
+}
+/*END OF JAVASCRIPT ADDS*/
 
 .score {
     font-family: "Londrina Solid", cursive;
@@ -46,8 +81,9 @@ h1#scoretime {
     padding-top: 20px;
 }
 
-h3#timer {
+h3#stopWatch {
     margin-top: 0px;
+    display: inline;
     padding-top: 5px;
     color: white;
     font-size: 24px;
