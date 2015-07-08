@@ -16,40 +16,63 @@ $(document).ready(function() {
         //useranswer = the anwer i submit in the text box
         var useranswer = $("#answer").val();
 
-
         // If the current card answertext = my submitted answer
         if (currcard.answertext == useranswer) {
-            // alert("correct");
+
+            //TIME FOR CARD
+            var card1 = $('<h3 class="defaultCardTime" id="cardTime1"></h3>');
+            card1.appendTo('.topScore')
+            card1.text('Card 1' + ' ' + '-' + ' ' + stopWatch.textContent)
+
+            // CORRECT FLASH
             var correct = $('<div class="correct" id="correct1">Correct!</div>');
             correct.appendTo('.logoGame'); //Tells you are correct
+            $("#status").html("Good Job!");
+
             ClearText(); // Calls cleartext function
             Draw(); // Calls draw function to get next card
         } else {
-            alert("try again");
+            // WRONG FLASH
+            var wrong = $('<div class="wrong" id="wrong1">Wrong!</div>');
+            wrong.appendTo('.logoGame');
+            $("#status").html('<font color="ff0000">Guess again...</font>');
+            setTimeout(function() {
+                $("#status").html('<font color="34cd39">Check the Hint!</font>');
+            }, 3000);
             ClearText();
         }
     });
 
     function ClearText() {
         $("#answer").val("");
-        $("#status").html("Try again!");
-        $("#correct1").animate HERE IS WHERE I LEFT OUT, we need to ease the ID correct 1
-        into easing out right when it says correct.
-            // document.getElementById("correct1").style.display = "none";
+        setTimeout(function() {
+            $("#correct1").remove();
+            $("#wrong1").remove();
+        }, 600);
     }
 
     function Draw() {
         currcard = deck.shift();
         $("#a").attr("src", currcard.picture);
         $("#hint").text(currcard.hint);
+
+
+
+
     }
 
     // STARTING POINT
     function startGame() {
-            var start = $('<div class="gameStart" id="gameStart1">Are you ready? Timer will start!</div>');
-            var startBtn = $('<button type="submit" id="startbtn1" class="startMe">Enter</button>');
+            var start = $('<div class="gameStart" id="gameStart1">How to play:</div>');
+            var howto = $('<div class="howto" id="howto1">When the logo appears, enter the correct brand as fast as you can!</div>');
+            var example = $('<img src="images/example.png" id="example1">');
+            var startBtn = $('<button type="submit" id="startbtn1" class="startMe">Ready?</button>');
+            var readyHint = $('<div class="ready" id="ready1">Timer will start!</div>');
             start.appendTo('.logoGame');
+            howto.appendTo('.logoGame');
+            example.appendTo('.logoGame');
             startBtn.appendTo('.logoGame');
+            readyHint.appendTo('.logoGame');
             document.getElementById("answer").style.display = "none";
             document.getElementById("clickme").style.display = "none";
             document.getElementById("hint").style.display = "none";
@@ -58,7 +81,10 @@ $(document).ready(function() {
         // STARTING CLICK
     $(".startMe").click(function() {
         document.getElementById("gameStart1").style.display = "none";
+        document.getElementById("howto1").style.display = "none";
+        document.getElementById("example1").style.display = "none";
         document.getElementById("startbtn1").style.display = "none";
+        document.getElementById("ready1").style.display = "none";
         document.getElementById("answer").style.display = "";
         document.getElementById("clickme").style.display = "";
         document.getElementById("hint").style.display = "";
@@ -103,7 +129,7 @@ $(document).ready(function() {
 
 
     // TIMER SETTINGS
-    var h3 = document.getElementsByTagName('h3')[0],
+    var h3 = document.getElementById('stopWatch')[0],
         seconds = 0,
         minutes = 0,
         hours = 0,
@@ -120,7 +146,7 @@ $(document).ready(function() {
             }
         }
 
-        h3.textContent = (hours ? (hours > 9 ? hours : "0" + hours) : "00") + ":" + (minutes ? (minutes > 9 ? minutes : "0" + minutes) : "00") + ":" + (seconds > 9 ? seconds : "0" + seconds);
+        stopWatch.textContent = (hours ? (hours > 9 ? hours : "0" + hours) : "00") + ":" + (minutes ? (minutes > 9 ? minutes : "0" + minutes) : "00") + ":" + (seconds > 9 ? seconds : "0" + seconds);
 
         timer();
     }

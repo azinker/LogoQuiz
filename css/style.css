@@ -11,7 +11,7 @@ body {
     background-size: cover;
     margin-left: auto;
     margin-right: auto;
-    /*    overflow-y: hidden;*/
+    /*overflow-y: hidden;*/
     
     font-family: "Londrina Solid", cursive;
 }
@@ -30,9 +30,32 @@ img {
     font-size: 40px;
     padding-top: 0px;
     position: relative;
-    bottom: 300px;
-    color: #53BDFF;
+    bottom: 350px;
+    color: #34cd39;
     font-weight: 300;
+}
+
+.howto {
+    font-size: 25px;
+    padding-top: 0px;
+    position: relative;
+    bottom: 330px;
+    padding: 0px 8px 0px 8px;
+    color: #34cd39;
+    font-weight: 300;
+}
+
+#example1 {
+    height: auto;
+    width: auto;
+    max-width: 270px;
+    max-height: 270px;
+    position: relative;
+    bottom: 350px;
+    box-shadow: 1px 0px 22px 0px #000000;
+    border-radius: 18px 18px 18px 18px;
+    -moz-border-radius: 18px 18px 18px 18px;
+    -webkit-border-radius: 18px 18px 18px 18px;
 }
 
 .startMe {
@@ -46,18 +69,70 @@ img {
     text-shadow: 1px 2px 0 #2EB933;
     font-family: "Londrina Solid", cursive;
     position: relative;
-    bottom: 200px;
+    bottom: 365px;
+}
+
+.startMe:hover {
+    background: #34cd39;
+}
+
+.ready {
+    margin-bottom: 20px;
+    color: #34cd39;
+    position: relative;
+    bottom: 355px;
+    font-size: 16px;
 }
 
 .correct {
-    font-size: 40px;
+    font-size: 90px;
     padding-top: 0px;
     position: relative;
-    bottom: 300px;
-    color: green;
+    bottom: 450px;
+    color: #34cd39;
+    font-weight: 300;
+}
+
+.wrong {
+    font-size: 90px;
+    padding-top: 0px;
+    position: relative;
+    bottom: 450px;
+    color: red;
     font-weight: 300;
 }
 /*END OF JAVASCRIPT ADDS*/
+
+.highScore {
+    font-family: "Londrina Solid", cursive;
+    margin: auto;
+    text-align: center;
+    background-color: #323232;
+    height: 420px;
+    width: 200px;
+    box-shadow: 1px 0px 22px 0px #000000;
+    border-radius: 18px 18px 18px 18px;
+    -moz-border-radius: 18px 18px 18px 18px;
+    -webkit-border-radius: 18px 18px 18px 18px;
+    position: fixed;
+    right: 214px;
+    top: 250px;
+}
+
+h1#userScore {
+    margin-top: 0px;
+    margin-bottom: 0px;
+    padding-top: 20px;
+    font-size: 40px;
+}
+
+h3.defaultCardTime {
+    margin-top: 0px;
+    display: inline;
+    padding-top: 5px;
+    color: white;
+    font-size: 24px;
+}
 
 .score {
     font-family: "Londrina Solid", cursive;
@@ -75,7 +150,7 @@ img {
     top: 250px;
 }
 
-h1#scoretime {
+h1#scoreTime {
     margin-top: 0px;
     margin-bottom: 0px;
     padding-top: 20px;
@@ -157,4 +232,122 @@ p {
 
 #clickme:hover {
     background: #34cd39;
+}
+
+#correct1 {
+    -webkit-animation-duration: 1.5s;
+    animation-duration: 1.5s;
+    -webkit-animation-fill-mode: both;
+    animation-fill-mode: both;
+}
+/*
+ * FadeIn animation
+*/
+
+@-webkit-keyframes fadeIn {
+    0% {
+        opacity: 0;
+    }
+    100% {
+        opacity: 1;
+    }
+}
+
+@keyframes fadeIn {
+    0% {
+        opacity: 0;
+    }
+    100% {
+        opacity: 1;
+    }
+}
+
+#correct1 {
+    -webkit-animation-name: fadeIn;
+    animation-name: fadeIn;
+}
+/*
+ * FadeOut animation
+*/
+
+@-webkit-keyframes fadeOut {
+    0% {
+        opacity: 1;
+    }
+    100% {
+        opacity: 0;
+    }
+}
+
+@keyframes fadeOut {
+    0% {
+        opacity: 1;
+    }
+    100% {
+        opacity: 0;
+    }
+}
+
+#correct1 {
+    -webkit-animation-name: fadeOut;
+    animation-name: fadeOut;
+}
+
+#wrong1 {
+    -webkit-animation-duration: 1.5s;
+    animation-duration: 1.5s;
+    -webkit-animation-fill-mode: both;
+    animation-fill-mode: both;
+}
+/*
+ * FadeIn animation
+*/
+
+@-webkit-keyframes fadeIn {
+    0% {
+        opacity: 0;
+    }
+    100% {
+        opacity: 1;
+    }
+}
+
+@keyframes fadeIn {
+    0% {
+        opacity: 0;
+    }
+    100% {
+        opacity: 1;
+    }
+}
+
+#wrong1 {
+    -webkit-animation-name: fadeIn;
+    animation-name: fadeIn;
+}
+/*
+ * FadeOut animation
+*/
+
+@-webkit-keyframes fadeOut {
+    0% {
+        opacity: 1;
+    }
+    100% {
+        opacity: 0;
+    }
+}
+
+@keyframes fadeOut {
+    0% {
+        opacity: 1;
+    }
+    100% {
+        opacity: 0;
+    }
+}
+
+#wrong1 {
+    -webkit-animation-name: fadeOut;
+    animation-name: fadeOut;
 }
