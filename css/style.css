@@ -191,10 +191,19 @@ h1 {
     font-weight: 300;
 }
 
-p {
+p#hint {
     margin-bottom: 20px;
     color: gray;
     line-height: 9.0;
+}
+
+p#cardCount {
+    position: absolute;
+    bottom: 490px;
+    right: 945px;
+    padding: 0px, 0px, 0px, 0px;
+    color: #34cd39;
+    font-size: 22px;
 }
 
 #answer {
