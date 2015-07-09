@@ -5,6 +5,8 @@ $(document).ready(function() {
 
     var deck = new Array();
     var currcard = null;
+    var cards = [];
+    var totalTime = [];
 
 
     startGame(); //brings up start
@@ -16,19 +18,27 @@ $(document).ready(function() {
         //useranswer = the anwer i submit in the text box
         var useranswer = $("#answer").val();
 
+
+
+
         // If the current card answertext = my submitted answer
         if (currcard.answertext == useranswer) {
 
             //TIME FOR CARD
-            var card1 = $('<h3 class="defaultCardTime" id="cardTime1"></h3>');
-            card1.appendTo('.topScore')
-            card1.text('Card 1' + ' ' + '-' + ' ' + stopWatch.textContent)
-
+            var newCard = $('<h3 class="defaultCardTime" id="cardTime1"></h3><br> ');
+            newCard.text(useranswer + ' ' + '-' + ' ' + stopWatch.textContent);
+            cards.push(newCard);
+            $('.topScore').children().remove();
+            for (var i = 0; i < cards.length; i++) {
+                cards[i].appendTo('.topScore');
+            }
+            // TRYING TO GET IT TO ADD TO TOTAL AMOUNT: NEED TO MAKE DIV
+            totalTime.push(minutes);
+            console.log(totalTime);
             // CORRECT FLASH
             var correct = $('<div class="correct" id="correct1">Correct!</div>');
             correct.appendTo('.logoGame'); //Tells you are correct
             $("#status").html("Good Job!");
-
             ClearText(); // Calls cleartext function
             Draw(); // Calls draw function to get next card
         } else {
@@ -63,22 +73,22 @@ $(document).ready(function() {
 
     // STARTING POINT
     function startGame() {
-            var start = $('<div class="gameStart" id="gameStart1">How to play:</div>');
-            var howto = $('<div class="howto" id="howto1">When the logo appears, enter the correct brand as fast as you can!</div>');
-            var example = $('<img src="images/example.png" id="example1">');
-            var startBtn = $('<button type="submit" id="startbtn1" class="startMe">Ready?</button>');
-            var readyHint = $('<div class="ready" id="ready1">Timer will start!</div>');
-            start.appendTo('.logoGame');
-            howto.appendTo('.logoGame');
-            example.appendTo('.logoGame');
-            startBtn.appendTo('.logoGame');
-            readyHint.appendTo('.logoGame');
-            document.getElementById("answer").style.display = "none";
-            document.getElementById("clickme").style.display = "none";
-            document.getElementById("hint").style.display = "none";
+        var start = $('<div class="gameStart" id="gameStart1">How to play:</div>');
+        var howto = $('<div class="howto" id="howto1">When the logo appears, enter the correct brand as fast as you can!</div>');
+        var example = $('<img src="images/example.png" id="example1">');
+        var startBtn = $('<button type="submit" id="startbtn1" class="startMe">Ready?</button>');
+        var readyHint = $('<div class="ready" id="ready1">Timer will start!</div>');
+        start.appendTo('.logoGame');
+        howto.appendTo('.logoGame');
+        example.appendTo('.logoGame');
+        startBtn.appendTo('.logoGame');
+        readyHint.appendTo('.logoGame');
+        document.getElementById("answer").style.display = "none";
+        document.getElementById("clickme").style.display = "none";
+        document.getElementById("hint").style.display = "none";
 
-        }
-        // STARTING CLICK
+    };
+    // STARTING CLICK
     $(".startMe").click(function() {
         document.getElementById("gameStart1").style.display = "none";
         document.getElementById("howto1").style.display = "none";
@@ -99,25 +109,55 @@ $(document).ready(function() {
 
         var card1 = {
             card: 1,
-            picture: "images/logo2.png",
-            hint: "HINT: ITS A COMPUTER LOGO",
-            answertext: "logo1"
+            picture: "images/logos/shell.png",
+            hint: "HINT: CAR FUEL!",
+            answertext: "shell"
         };
 
         var card2 = {
             card: 2,
-            picture: "images/logo2.png",
-            hint: "HINT: ITS A COMPUTER LOGO984",
-            answertext: "logo2"
+            picture: "images/logos/atari.jpg",
+            hint: "HINT: GAMING!",
+            answertext: "atari"
         };
         console.log(deck);
 
         var card3 = {
             card: 3,
-            picture: "images/logo.png",
-            hint: "HINT: ITS A COMPUTER LOGO393",
-            answertext: "logo3"
+            picture: "images/logos/dd.jpg",
+            hint: "HINT: CAFFIENE KEEPS YOU AWAKE!",
+            answertext: "dunkin donuts"
         };
+
+        var card4 = {
+            card: 4,
+            picture: "images/logos/firestone.png",
+            hint: "HINT: CARS NEED THEM!",
+            answertext: "firestone"
+        };
+
+        var card5 = {
+            card: 5,
+            picture: "images/logos/fbi.png",
+            hint: "HINT: KEEPS AMERICA SAFE!",
+            answertext: "fbi"
+        };
+
+        var card6 = {
+            card: 6,
+            picture: "images/logos/adobe.png",
+            hint: "HINT: PDF's!",
+            answertext: "adobe"
+        };
+
+        var card7 = {
+            card: 7,
+            picture: "images/logos/newbalance.png",
+            hint: "HINT: WE RUN IN THEM!",
+            answertext: "new balance"
+        };
+
+
 
         deck.push(card1);
         console.log('card 1 was pushed' + deck);
@@ -125,7 +165,14 @@ $(document).ready(function() {
         console.log('card 2 was pushed' + deck);
         deck.push(card3);
         console.log('card 3 was pushed' + deck);
+        deck.push(card4);
+        console.log('card 4 was pushed' + deck);
+        deck.push(card5);
+        console.log('card 5 was pushed' + deck);
+        deck.push(card6);
+        console.log('card 6 was pushed' + deck);
     }
+
 
 
     // TIMER SETTINGS
@@ -136,10 +183,10 @@ $(document).ready(function() {
         t;
 
     function add() {
-        seconds++;
+        var totalSeconds = seconds++;
         if (seconds >= 60) {
             seconds = 0;
-            minutes++;
+            var totalMinutes = minutes++;
             if (minutes >= 60) {
                 minutes = 0;
                 hours++;
@@ -152,7 +199,7 @@ $(document).ready(function() {
     }
 
     function timer() {
-        t = setTimeout(add, 1000);
+        t = setTimeout(add, 1);
     }
 
 

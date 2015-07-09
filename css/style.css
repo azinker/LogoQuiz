@@ -16,6 +16,11 @@ body {
     font-family: "Londrina Solid", cursive;
 }
 
+.container {
+    position: relative;
+    bottom: 800px;
+}
+
 img {
     display: block;
     margin-top: 30px;
@@ -23,6 +28,8 @@ img {
     height: 300px;
     margin-right: auto;
     margin-left: auto;
+    max-width: 270px;
+    max-height: 270px;
 }
 /*STUFF ADDED BY JAVASCRIPT*/
 
@@ -114,9 +121,9 @@ img {
     border-radius: 18px 18px 18px 18px;
     -moz-border-radius: 18px 18px 18px 18px;
     -webkit-border-radius: 18px 18px 18px 18px;
-    position: fixed;
-    right: 214px;
-    top: 250px;
+    position: relative;
+    left: 324px;
+    top: 545px;
 }
 
 h1#userScore {
@@ -131,7 +138,7 @@ h3.defaultCardTime {
     display: inline;
     padding-top: 5px;
     color: white;
-    font-size: 24px;
+    font-size: 16px;
 }
 
 .score {
@@ -145,9 +152,9 @@ h3.defaultCardTime {
     border-radius: 18px 18px 18px 18px;
     -moz-border-radius: 18px 18px 18px 18px;
     -webkit-border-radius: 18px 18px 18px 18px;
-    position: fixed;
-    left: 215px;
-    top: 250px;
+    position: relative;
+    right: 325px;
+    top: 965px;
 }
 
 h1#scoreTime {
@@ -161,13 +168,12 @@ h3#stopWatch {
     display: inline;
     padding-top: 5px;
     color: white;
-    font-size: 24px;
+    font-size: 34px;
 }
 
 .logoGame {
     font-family: "Londrina Solid", cursive;
     margin: auto;
-    margin-top: 150px;
     text-align: center;
     background-color: #323232;
     height: 620px;
