@@ -184,11 +184,12 @@ h3#stopWatch {
     -webkit-border-radius: 18px 18px 18px 18px;
 }
 
-h1 {
+h1#status,
+h1#scoreTime,
+h1#userScore {
     font-size: 50px;
     padding-top: 20px;
     color: #53BDFF;
-    font-weight: 300;
 }
 
 p#hint {
@@ -213,7 +214,7 @@ p#cardCount {
     border-width: 2px;
     border-radius: 0px;
     border-style: solid;
-    color: #b0b0b0;
+    color: #494848;
     box-shadow: 1px 0px 22px 0px #53BDFF;
     text-shadow: 0px 0px 0px rgba(42, 42, 42, .84);
     font-family: "Londrina Solid", cursive;
@@ -254,6 +255,69 @@ p#cardCount {
     animation-duration: 1.5s;
     -webkit-animation-fill-mode: both;
     animation-fill-mode: both;
+}
+
+#completion {
+    font-family: "Londrina Solid", cursive;
+    text-align: center;
+    right: 500px;
+    top: 860px;
+    background-color: #323232;
+    height: 680px;
+    width: 900px;
+    box-shadow: 1px 0px 22px 0px #000000;
+    border-radius: 18px 18px 18px 18px;
+    -moz-border-radius: 18px 18px 18px 18px;
+    -webkit-border-radius: 18px 18px 18px 18px;
+    position: absolute;
+}
+
+#winHead {
+    font-size: 85px;
+    padding-top: 20px;
+    color: #53BDFF;
+    font-weight: 300;
+}
+
+#winEx {
+    font-size: 65px;
+    padding-top: 20px;
+    color: #34cd39;
+    font-weight: 200;
+}
+
+#winUser {
+    font-size: 60px;
+    right: 90px;
+    top: 30px;
+    position: relative;
+    padding-top: 20px;
+    color: #34cd39;
+    font-weight: 200;
+}
+
+#winUserTime {
+    font-size: 60px;
+    right: 250px;
+    bottom: 340px;
+    position: absolute;
+    padding-top: 20px;
+    color: #53BDFF;
+    font-weight: 200;
+}
+
+#startMe2 {
+    border: none;
+    font-size: 30px;
+    padding: 10px 20px;
+    cursor: pointer;
+    background: #53BDFF;
+    color: white;
+    transition: .4s;
+    text-shadow: 1px 2px 0 #2EB933;
+    font-family: "Londrina Solid", cursive;
+    position: relative;
+    bottom: 365px;
 }
 /*
  * FadeIn animation
