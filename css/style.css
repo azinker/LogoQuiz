@@ -319,6 +319,10 @@ p#cardCount {
     position: relative;
     top: 165px;
 }
+
+#restartMe:hover {
+    background: #34cd39;
+}
 /*
  * FadeIn animation
 */
