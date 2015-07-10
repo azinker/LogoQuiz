@@ -137,8 +137,8 @@ h3.defaultCardTime {
     margin-top: 0px;
     display: inline;
     padding-top: 5px;
-    color: white;
-    font-size: 16px;
+    color: #34cd39;
+    font-size: 14px;
 }
 
 .score {
@@ -306,7 +306,7 @@ p#cardCount {
     font-weight: 200;
 }
 
-#startMe2 {
+#restartMe {
     border: none;
     font-size: 30px;
     padding: 10px 20px;
@@ -317,7 +317,7 @@ p#cardCount {
     text-shadow: 1px 2px 0 #2EB933;
     font-family: "Londrina Solid", cursive;
     position: relative;
-    bottom: 365px;
+    top: 165px;
 }
 /*
  * FadeIn animation
